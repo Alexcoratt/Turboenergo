@@ -6,7 +6,6 @@ parallaxElems.forEach(elem => {
 
 window.addEventListener("scroll", event => {
     parallaxElems.forEach(elem => {
-        event.preventDefault();
         elem.style.top = +elem.getAttribute("data-parallax-top-start") + 
             scrollY * elem.getAttribute("data-parallax-ratio") + "px";
     });

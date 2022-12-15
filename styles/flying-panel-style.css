@@ -6,7 +6,7 @@
 
     backdrop-filter: blur(8px);
     
-    transition-duration: .5s;
+    transition: all .5s ease 0s;
     position: relative;
 }
 
@@ -95,6 +95,6 @@
     background: var(--icon-gradient);
 }
 
-.hidden {
+.flying-panel .icon-line .drop-menu.hidden {
     display: none!important;
 }
