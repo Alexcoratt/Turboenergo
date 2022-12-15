@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --icon-gradient: linear-gradient(135deg, #0635AB 0%, #00939A 100%);
+    --standard-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+    --standard-duration: .5s;
+}
+
+body {
+    padding: 582px 0 256px;
+    background-color: black;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.flying {
+    box-shadow: var(--standard-shadow);
+    border-radius: 32px;
+}
+
+.block {
+    margin: 128px 16px;
+    padding: 16px;
+    position: relative;
+}
+
+.block:last-child {
+    margin-bottom: 32px;
+}
+
+.block:nth-child(1n) {
+    margin-top: 32px;
+}
+
+.block-heading{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: 0.105em;
+}
+
+.button {
+    text-decoration: none;
+    transition-duration: var(--standard-duration);
+}
+
+.button:hover {
+    box-shadow: var(--standard-shadow);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: none;
+    transform: scale(0.9);
+    filter: invert(1);
+    transition-property: transform, box-shadow;
+}
+
+.hat {
+    top: 0;
+    transform: scale(1.1);
+    min-height: 256px;
+    position: absolute;
+    height: 712px;
+    width: 100%;
+    background-image: url("../img/page/bg-min-corrected.jpg");
+    background-position: bottom;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0s;
+}
+
+.hat.rotated {
+    height: 256px;
+    background-image: url("../img/page/planet.png");
+    transform: rotate(180deg);
+    position: absolute;
+    top: initial;
+    bottom: 0;
+    z-index: 0;
+}
+
+.slogan-box {
+    max-width: 768px;
+    width: 70%;
+    height: fit-content;
+    position: relative;
+    color: white;
+    transition-property: color, text-shadow;
+    transition-duration: 3s;
+}
+
+.glowing {
+    text-shadow: 0px 0px 24px #ffffffb0, 0 0 8px #1a67d7;
+}
+
+.hat .logo-box {
+    position: absolute;
+    left: 10%;
+    width: 128px;
+    padding: 12px;
+}
+
+.hat .logo-box img {
+    width: 100%;
+    stroke: white;
+}
+
+.hat h1 {
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 0.105em;
+    margin-bottom: 16px;
+}
+
+.hat h3 {
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.105em;
+    text-align: right;
+}
+
+.page {
+    margin: 0 auto -32px;
+    max-width: 1024px;
+    padding: 16px;
+    position: relative;
+    background-color: white;
+    min-height: 100vh;
+    border-radius: 32px;
+    box-shadow: inset var(--standard-shadow);
+    transition-duration: 0s;
+    z-index: 1;
+}
+
+.page .arrows {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+    position: relative;
+    top: 0;
+}
+
+.page .arrows img {
+    width: 32px;
+    height: 32px;
+}
+
+.page .arrows.hidden {
+    opacity: 0;
+}
+
+.page .arrows.shift-down {
+    top: 16px;
+}
+
+.header {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 15;
+}
+
+.top-slider > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.top-slider .slider {
+    height: initial;
+    overflow: hidden;
+    flex: 1;
+    padding: 16px 12px;
+}
+
+.top-slider .slider .line {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    left: 0;
+    min-width: 100%;
+}
+
+.top-slider .line-item {
+    background: var(--img-url);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+    border-radius: 32px;
+    padding: 16px;
+}
+
+.top-slider .line-item:hover {
+    background-position: bottom;
+}
+
+.top-slider .line-item:active {
+    filter: none;
+}
+
+.top-slider .line-item .heading {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.top-slider > div > .button {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    border: none;
+    padding: 16px;
+    background: var(--icon-gradient);
+}
+
+.top-slider > div > .button img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+}
+
+.achievments h1 {
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 0.105em;
+    width: 100%;
+    text-align: center;
+    color: #0345A5;
+}
+
+.achievments .achievment-list {
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.achievments .achievment-list li {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    max-width: 25%;
+}
+
+.achievments .achievment-list li .highlight{
+    color: #0345A5;
+    font-size: 24px;
+}
+
+.news {
+    padding: 16px 128px;
+}
+
+.news .news-list {
+    list-style-type: none;
+}
+
+.news .news-item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 32px 0;
+}
+
+.news .news-item img {
+    height: 100px;
+    width: 100px;
+}
+
+.news .news-item .text .date {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.105em;
+}
+
+.news .news-item .text .heading {
+    margin: 8px 0;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.105em;
+}
+
+.altenergy {
+    background-color: rgba(3, 69, 165, 0.3);
+    padding: 16px 64px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.altenergy .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.altenergy .heading {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 24px 0;
+}
+
+.altenergy .info {
+    width: 100%;
+}
+
+.altenergy .info div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.altenergy a {
+    width: 200px;
+    height: 50px;
+    background: var(--icon-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+.partners .slider {
+    overflow: hidden;
+}
+
+.partners .slider .line {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.partners .slider .line-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.partners .slider .line-item > * {
+    width: 100%;
+}
